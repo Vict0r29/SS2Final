@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>plagiarism</title>
+</head>
+<body>
+  <form action="#" method="post">
+    <p>Plagiarism</p>
+    <p><input type="text" name="pla_input"/></p>
+    <p><input type="submit" value="Plagiarism"/></p>
+    <p>{{output_pla}}</p>
+    <table>
+        <thead>
+              <tr>
+                  <th>Input</th>
+                  <th>Output</th>
+              </tr>
+        </thead>
+        <tbody>
+            {%for row in rows_pla%}
+            <tr>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paraphrase</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<form action="#" method="post">
+    <p>Paraphrase</p>
+    <p><input type="text" name="para_input"/></p>
+    <p><input type="submit" value="paraphrase"/></p>
+    <p>{{output_para}}</p>
+    <table>
+        <thead>
+              <tr>
+                  <th>Input</th>
+                  <th>Output</th>
+              </tr>
+        </thead>
+        <tbody>
+            {%for row in rows_para%}
+            <tr>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</form>
+</body>
+</html>

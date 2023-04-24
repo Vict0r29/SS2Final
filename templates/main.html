@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+  <div> {{session['id']}}</div>
+  <div> {{token_id}}</div>
+<img src="{{session['profile_pic']}}">
+
+<a href="/paraphrasing/{{token_id}}">Paraphrasing</a>
+<a href="/plagiarism/{{token_id}}">Plagiarism checker</a>
+<a href="/completion/{{token_id}}">Text completion</a>
+<a href="/grammar/{{token_id}}">Grammar check</a>
+</body>
+</html>

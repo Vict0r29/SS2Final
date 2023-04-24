@@ -1,0 +1,41 @@
+header {
+  margin: 0;
+  padding: 5px;
+  background-color: lightgray;
+  text-align: center;
+}
+main {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+}
+
+nav a {
+    color: #b51a00;
+    font-size: 3em;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+td, th {
+    border: 1px solid #777;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tbody tr:nth-child(odd) {
+    background: #eee;
+}
+caption {
+    font-size: 1.2rem;
+}

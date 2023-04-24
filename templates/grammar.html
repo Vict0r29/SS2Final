@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grammar</title>
+</head>
+<body>
+<form action="#" method="post">
+    <p>Grammar Check</p>
+    <p><input type="text" name="grammar_input"/></p>
+    <p><input type="submit" value="grammar"/></p>
+    <p>{{output_grammar}}</p>
+    <table>
+        <thead>
+              <tr>
+                  <th>Input</th>
+                  <th>Output</th>
+              </tr>
+        </thead>
+        <tbody>
+            {%for row in rows_grammar%}
+            <tr>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</form>
+</body>
+</html>
