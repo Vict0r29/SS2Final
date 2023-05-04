@@ -1,8 +1,8 @@
 import os
 import pathlib
-import asyncio
 import sqlite3
 import requests
+import asyncio
 import openai
 from flask import Flask, session, abort, redirect, request, render_template, jsonify, make_response
 import jwt
@@ -14,7 +14,7 @@ from pip._vendor import cachecontrol
 import google.auth.transport.requests
 
 app = Flask("Google Login App")
-openai.api_key = "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"
+openai.api_key = "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"
 app.config['SECRET_KEY'] = 'ccf07ef2cb3c4233ae412249e4c13baa'
 app.secret_key = "CodeSpecialist.com"
 # only one account accept at 1 time
