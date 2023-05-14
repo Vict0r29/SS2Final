@@ -265,7 +265,7 @@ async def paraphare(id, pic, name):
                            pic=pic,
                            name=name)
   else:
-    para_input = request.form["para_input"].strip()
+    para_input = request.form["para_input"].strip()ádfasd
     completion = openai.ChatCompletion.create(model="gpt-3.5-turbo",
                                               messages=[{
                                                 "role":
