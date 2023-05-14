@@ -3,13 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Home page</title>
+  <style>
+        body {
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+    form {
+        margin: 20px auto;
+        max-width: 800px;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+        a {
+            color: #fff;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        a:hover {
+            background-color: #388E3C;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-  <div> {{session['id']}}</div>
-  <div> {{token_id}}</div>
+  <!-- <div> {{session['id']}}</div> -->
+  <!-- <div> {{pic}}</div> -->
+
+  <div> {{name}}</div>
 <img src="{{session['profile_pic']}}">
 
-<a href="/paraphrasing/{{token_id}}/{{pic}}/{{name}}">Paraphrasing</a>
+
+  <a href="/paraphrasing/{{token_id}}/{{pic}}/{{name}}">Paraphrasing</a>
 <a href="/plagiarism/{{token_id}}/{{pic}}/{{name}}">Plagiarism checker</a>
 <a href="/completion/{{token_id}}/{{pic}}/{{name}}">Text completion</a>
 <a href="/grammar/{{token_id}}/{{pic}}/{{name}}">Grammar check</a>

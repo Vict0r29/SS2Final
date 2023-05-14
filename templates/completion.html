@@ -3,15 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <title>Complition</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+    }
+    form {
+        margin: 20px auto;
+        max-width: 800px;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #3e8e41;
+    }
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f5f5f5;
+        font-weight: bold;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    a {
+        color: #4CAF50;
+        text-decoration: none;
+        margin-right: 20px;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    footer {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 25px 15px;
+}
+
+footer p {
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+  </style>
 </head>
 <body>
 <form action="#" method="post">
-    <p>Completion</p>
+  <p style="font-size: 30px; font-weight: bold; text-align: center;">Completion</p>
+    <a href="/protected_area">Home Page</a>
+    <a href="/paraphrasing/{{id}}/{{pic}}/{{name}}">Paraphrasing</a>
+    <a href="/plagiarism/{{id}}/{{pic}}/{{name}}">Plagiarism checker</a>
+    <a href="/grammar/{{id}}/{{pic}}/{{name}}">Grammar check</a>
+    <a href="/logout">Logout</a>
+
     <p>{{name}}</p>
-    <img src='{{pic.replace("_","/")}}'>
-    <p><input type="text" name="completion_input"/></p>
-    <p><input type="submit" value="completion"/></p>
+        <!-- vì link pic  có chưa dấu "/", nếu trực tiếp truyền vào href thì k render đc nên chuyển thành "_" r trong font chuyển ngc lại thành / -->
+    <!-- <img src='{{pic.replace("_","/")}}'> -->
+    <p><input type="text" name="completion_input" placeholder="Input your text here" /></p>
+    <p><input type="submit" value="Completion"/></p>
+        <!-- Kết quả sau khi chatGPT completion -->
+    <div style="width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        background-color: white">
     <p>{{output_completion}}</p>
+
+  </div>
     <table>
         <thead>
               <tr>
@@ -20,19 +120,23 @@
               </tr>
         </thead>
         <tbody>
+          <!-- trả về mảng của kết quả đã từng đc nhập lấy từ database -->
             {%for row in rows_completion%}
             <tr>
+              <!-- input -->
             <td>{{ row[1] }}</td>
+              <!-- output -->
             <td>{{ row[2] }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-<a href="/paraphrasing/{{token_id}}/{{pic}}/{{name}}">Paraphrasing</a>
-<a href="/plagiarism/{{token_id}}/{{pic}}/{{name}}">Plagiarism checker</a>
-<a href="/completion/{{token_id}}/{{pic}}/{{name}}">Text completion</a>
-<a href="/grammar/{{token_id}}/{{pic}}/{{name}}">Grammar check</a>
-<a href="/logout">Logout</a>
 </form>
+  <footer>
+        <p>&copy; 2023 Writing Assistant Tool. Provided by:</p>
+        <p>Truong Quang Dung</p>
+        <p>Do Viet Khoa</p>
+        <p>Tran Minh Hoang</p>
+    </footer>
 </body>
 </html>

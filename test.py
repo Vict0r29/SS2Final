@@ -1,6 +1,9 @@
-import openai
+import urllib
+from flask import Flask, session, abort, redirect, request, render_template, jsonify, make_response
 
-openai.api_key= "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"
+url = "https://www.sciencedirect.com/science/article/pii/S1364815215000811"
+file = urllib.request.urlopen(url)
 
-completion = openai.ChatCompletion.create(model="gpt-3.5-turbo",messages=[{"role": "user","content":"how to use create and use parameter in form builder?"}])
-print(completion.choices[0].message.content)
+for line in file:
+	decoded_line = line.decode("utf-8")
+	print(decoded_line)
