@@ -93,15 +93,17 @@ footer p {
 <form action="#" method="post">
     <p style="font-size: 30px; font-weight: bold; text-align: center;">Paraphrase</p>
   <a href="/protected_area">Home Page</a>
-  <a href="/plagiarism/{{id}}/{{pic}}/{{name}}">Plagiarism checker</a>
-  <a href="/completion/{{id}}/{{pic}}/{{name}}">Text completion</a>
-  <a href="/grammar/{{id}}/{{pic}}/{{name}}">Grammar check</a>
+  <a href="/plagiarism">Plagiarism checker</a>
+  <a href="/completion">Text completion</a>
+  <a href="/grammar">Grammar check</a>
   <a href="/logout">Logout</a>
     <p>{{name}}</p>
         <!-- vì link pic  có chưa dấu "/", nếu trực tiếp truyền vào href thì k render đc nên chuyển thành "_" r trong font chuyển ngc lại thành / -->
     <!-- <img src='{{pic.replace("_","/")}}'> -->
-    <p><input type="text" name="para_input" placeholder="Input your text here" /></p>
+    <form method="POST">
+        <p><input type="text" name="para_input" placeholder="Input your text here" /></p>
     <p><input type="submit" value="Paraphrase"/></p>
+    </form>
     <!-- output when dùng chatgpt -->
     <div style="width: 100%;
         padding: 10px;
@@ -111,6 +113,7 @@ footer p {
         margin-top: 20px;
         background-color: white">
         <p>{{output_para}}</p>
+        <p>{{input}}</p>
     </div>
     <table>
         <thead>

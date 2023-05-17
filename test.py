@@ -1,9 +1,21 @@
-import urllib
-from flask import Flask, session, abort, redirect, request, render_template, jsonify, make_response
+from flask import Flask, jsonify
 
-url = "https://www.sciencedirect.com/science/article/pii/S1364815215000811"
-file = urllib.request.urlopen(url)
+# define Flask instance
+app = Flask(__name__)
 
-for line in file:
-	decoded_line = line.decode("utf-8")
-	print(decoded_line)
+# Define URL
+@app.route('/books')
+# Map function to URL and define dictionary
+def return_json():
+   my_dict = {"Mystery": ["The Hound of the Baskervilles",
+                          "And Then There Were None"],
+              "Science Fiction": ["A Canticle for Leibowitz",
+                                  "That Hideous Strength",
+                                  "Speaker for the Dead"],
+              "Fantasy": ["The Way of Kings", "Mistborn"],
+              "Biography": "Open"}
+
+   return jsonify(my_dict)
+
+if __name__ == '__main__':
+   app.run()

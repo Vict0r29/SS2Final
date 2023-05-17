@@ -3,8 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Login page</title>
+  <style>
+  .google-login {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .google-login-button {
+    background-color: #4CAF50;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 20px;
+  }
+
+  .google-login-button:hover {
+    background-color: #ddd;
+  }
+</style>
 </head>
 <body>
-    "Hello World <a href='/login'><button>Login</button></a>"
+  <!-- <p style="font-size: 30px; font-weight: bold; text-align: center;">Login</p> -->
+  <div class="google-login">
+    <a href='/login'>
+  <button class="google-login-button">
+    Continue with Google Account
+  </button>
+      </a>
+</div>
 </body>
 </html>
